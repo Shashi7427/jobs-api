@@ -41,10 +41,10 @@ app.use(
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
   })
 );
-app.use(helmet);
-app.use(cors);
-app.use(xss);
-app.use(rateLimiter);
+app.use(helmet());
+app.use(cors());
+app.use(xss());
+app.use(rateLimiter());
 
 const port = process.env.PORT || 3000;
 
