@@ -22,6 +22,12 @@ app.use(cors({
   origin: "*" // Replace with the allowed origin(s)
 }));
 
+
+//Swagge
+const swaggerUI = require('swagger-ui-express')
+const YAML = require('yamljs')
+const swaggerDoc = YAML.load('./swagger.yaml')
+
 app.use(express.json());
 // extra packages
 
@@ -32,6 +38,7 @@ app.use("/api/v1/jobs", authenticateUser, jobsRouter);
 app.get('/', (req, res) => {
   res.send('<h1>Jobs API</h1><a href="/api-docs">Documentation</a>');
 });
+app.use('/api-use',swaggerUI.serve,swaggerUI.setup(swaggerDoc));
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
