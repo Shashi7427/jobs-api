@@ -36,7 +36,7 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/jobs", authenticateUser, jobsRouter);
 
 app.get('/', (req, res) => {
-  res.send('<h1>Jobs API</h1><a href="/api-docs">Documentation</a>');
+  res.send('<h1>Jobs API</h1><a href="/api-use">Documentation</a>');
 });
 app.use('/api-use',swaggerUI.serve,swaggerUI.setup(swaggerDoc));
 
