@@ -18,6 +18,10 @@ const helmet = require("helmet");
 const cors = require("cors");
 const xss = require("xss-clean");
 
+app.use(cors({
+  origin: "*" // Replace with the allowed origin(s)
+}));
+
 app.use(express.json());
 // extra packages
 
